@@ -1,0 +1,22 @@
+server:
+  port: 80
+spring:
+  application:
+    name: cloud-order-hystrix-service
+eureka:
+  client:
+    fetch-registry: true
+    register-with-eureka: true
+    service-url:
+      defaultZone: http://eureka7001.com:7001/eureka
+
+
+ribbon:
+  # 建立连接后，在服务端读取数据的时间
+  ReadTimeout: 2000
+  # 建立连接所需的时间
+  ConnetTimeout: 2000
+
+feign:
+  hystrix:
+    enabled: true
